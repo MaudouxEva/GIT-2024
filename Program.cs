@@ -1,4 +1,6 @@
-﻿Dictionary<string, int> boissons = new()
+﻿
+
+Dictionary<string, int> boissons = new()
 {
    {"soda", 0 },
    {"eau", 0 },
@@ -6,13 +8,8 @@
    {"bière", 0 },
 };
 
-int totalStock = 0;
-string choix;
 
-foreach (int values in boissons.Values)
-{
-   totalStock += values;
-}
+string choix;
 
 foreach (KeyValuePair<string, int> pair in boissons)
 {
@@ -51,8 +48,3 @@ do
    Console.WriteLine("Apuyer sur Escape pour arrêter ou sur une autre touche pour continuer");
 
 } while (Console.ReadKey(true).Key != ConsoleKey.Escape || totalStock > 0);
-
-if (totalStock > 0)
-{
-   Console.WriteLine("Il n'y a plus de boissons dans la machine...");
-}
